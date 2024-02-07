@@ -12,4 +12,9 @@ class Airline extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function fleet()
+    {
+        return $this->embedsMany(Flight::class, 'fleet');
+    }
 }

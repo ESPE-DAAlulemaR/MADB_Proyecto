@@ -13,9 +13,16 @@ class Flight extends Model
         'departure_date',
         'arrival_date',
         'price',
-        'status',
-        
-        'route',
-        'plane',
+        'status'
     ];
+
+    public function route()
+    {
+        return $this->embedsOne(Route::class);
+    }
+    
+    public function plane()
+    {
+        return $this->embedsOne(Plane::class);
+    }
 }

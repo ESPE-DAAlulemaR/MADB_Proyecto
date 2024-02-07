@@ -12,8 +12,11 @@ class Booking extends Model
     protected $fillable = [
         'passenger_name',
         'seat_number',
-        'status',
-        
-        'flight',
+        'status'
     ];
+
+    public function flight()
+    {
+        return $this->embedsOne(Flight::class);
+    }
 }

@@ -22,7 +22,7 @@
                 <td>{{ $airline->name }}</td>
                 <td>
                     @foreach ($airline->fleet as $plane)
-                        {{ $plane['manufacturer'] }} - {{ $plane['model'] }},
+                        {{ $plane->manufacturer }} - {{ $plane->model }},
                     @endforeach
                 </td>
                 

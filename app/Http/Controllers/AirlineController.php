@@ -40,12 +40,9 @@ class AirlineController extends Controller
         unset($validated['fleet']);
 
         $airline = Airline::create($validated);
-        $aux = [];
         
         foreach ($fleetArr as $planeId)
-        array_push($aux, Plane::find($planeId)->toArray());
-    
-        $airline->fleet = $aux;
+            $airline->fleet()->associate(Plane::find($planeId));
         $airline->save();
 
         return redirect()->route("airlines.index")->with([
