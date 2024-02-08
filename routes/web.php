@@ -9,7 +9,7 @@ use App\Http\Controllers\RouteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    //
+    return redirect()->route('airlines.index');
 });
 
 Route::middleware('auth')->group(function () {
@@ -20,11 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('planes', PlaneController::class);
     Route::resource('routes', RouteController::class);
 });
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

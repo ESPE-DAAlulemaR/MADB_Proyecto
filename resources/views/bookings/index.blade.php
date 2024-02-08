@@ -8,7 +8,7 @@
 
 @section('content')
 <a href="{{ route('bookings.create') }}" class="btn btn-primary btn-sm mb-3">Nuevo</a>
-<table class="table table-hover table-dark">
+<table class="table table-hover table-dark dataTable">
     <thead>
         <tr>
             <th scope="col">Nombre del Pasajero</th>

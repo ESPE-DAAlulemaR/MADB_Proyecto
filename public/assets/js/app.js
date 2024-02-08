@@ -20,3 +20,7 @@ function hideLoginCardFooter() {
 
     footer.style.display = 'none';
 }
+
+$(document).ready(function() {
+    $('.dataTable').DataTable();
+});

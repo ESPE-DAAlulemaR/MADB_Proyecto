@@ -26,20 +26,22 @@
         </div>
     </div>
 
-    <div class="row mb-3">
-        <div class="col-12">
-            <label for="fleet" class="form-label">Flota</label>
-            @foreach ($aircrafts as $aircraft)
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="{{ $aircraft['_id'] }}"
-                        id="fleet_{{ $aircraft['_id'] }}" name="fleet[]" @if (isset($airline) && in_array(['_id' => $aircraft['_id']], $airline['fleet'])) checked @endif>
-                    <label class="form-check-label" for="fleet_{{ $aircraft['_id'] }}">
-                        {{ $aircraft['model'] }} (Capacidad: {{ $aircraft['capacity'] }})
-                    </label>
-                </div>
-            @endforeach
+    @if (!isset($airline))
+        <div class="row mb-3">
+            <div class="col-12">
+                <label for="fleet" class="form-label">Flota</label>
+                @foreach ($aircrafts as $aircraft)
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="{{ $aircraft['_id'] }}"
+                            id="fleet_{{ $aircraft['_id'] }}" name="fleet[]" @if (isset($airline) && in_array(['_id' => $aircraft['_id']], $airline['fleet'])) checked @endif>
+                        <label class="form-check-label" for="fleet_{{ $aircraft['_id'] }}">
+                            {{ $aircraft['model'] }} (Capacidad: {{ $aircraft['capacity'] }})
+                        </label>
+                    </div>
+                @endforeach
+            </div>
         </div>
-    </div>    
+    @endif
 
     <div class="row p-3">
         <button type="submit" class="btn btn-primary">Guardar</button>
