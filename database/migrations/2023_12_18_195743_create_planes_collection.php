@@ -17,6 +17,7 @@ return new class extends Migration
             $collection->string('manufacturer');
             $collection->integer('passenger_capacity');
             $collection->integer('cargo_capacity');
+            $collection->string('year_of_manufacture');
             
             $collection->timestamps();
         });

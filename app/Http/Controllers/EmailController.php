@@ -18,7 +18,7 @@ class EmailController extends Controller
         ]);
 
         $email = new ErrorSuccesMailable($request->all());
-        Mail::to([])->send($email);
+        Mail::to($request->destination_address)->send($email);
 
         return response()->json([ 'message' => 'Correo Enviado' ]);
     }

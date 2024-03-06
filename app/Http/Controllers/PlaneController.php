@@ -36,6 +36,7 @@ class PlaneController extends Controller
             'manufacturer' => 'required',
             'passenger_capacity' => 'required',
             'cargo_capacity' => 'required',
+            'year_of_manufacture' => 'required'
         ]);
 
         Plane::create($validated);
@@ -73,6 +74,7 @@ class PlaneController extends Controller
             'manufacturer' => 'required',
             'passenger_capacity' => 'required',
             'cargo_capacity' => 'required',
+            'year_of_manufacture' => 'required'
         ]);
 
         $plane->update($validated);

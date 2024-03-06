@@ -28,11 +28,12 @@ class FlightTableSeeder extends Seeder
             $fleet = $airline['fleet'];
 
             $aircraft = $fleet[array_rand($fleet)];
+            $price = rand(100, 1000) . '.' . rand(1, 99);
 
             $flight = Flight::create([
                 'departure_date' => now()->format('Y/m/d h:i:s'),
                 'arrival_date' => now()->addHours($route['estimated_duration'])->format('Y/m/d h:i:s'),
-                'price' => rand(100, 1000),
+                'price' => $price,
                 'status' => $statues[rand(0, count($statues) - 1)]
             ]);
 

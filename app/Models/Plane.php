@@ -13,6 +13,7 @@ class Plane extends Model
         'model',
         'manufacturer',
         'passenger_capacity',
-        'cargo_capacity'
+        'cargo_capacity',
+        'year_of_manufacture'
     ];
 }

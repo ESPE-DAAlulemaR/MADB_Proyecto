@@ -46,6 +46,17 @@
                 </span>
             @endif
         </div>
+
+        <div class="col-4">
+            <label for="year_of_manufacture" class="form-label">Año de fabricación</label>
+            <input type="text" class="form-control {{ $errors->has('year_of_manufacture') ? 'is-invalid' : '' }}" id="year_of_manufacture"
+                name="year_of_manufacture" value="{{ isset($plane) ? $plane->year_of_manufacture : old('year_of_manufacture') }}">
+            @if ($errors->has('year_of_manufacture'))
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ __($errors->first('year_of_manufacture')) }}</strong>
+                </span>
+            @endif
+        </div>
     </div>
 
     <div class="row mb-3">
@@ -60,6 +71,7 @@
             @endif
         </div>
     </div>
+
 
     <div class="row p-3">
         <button type="submit" class="btn btn-primary">Guardar</button>
